@@ -1,18 +1,15 @@
+"use client";
+import { tasksFixture } from "@/fixture/tasks.fixture";
+import { useState } from "react";
 import AddTask from "../components/AddTask";
 import TimeTracker from "../components/TimeTracker";
 
 const page = () => {
-  const estimatesTime = [
-    { taskName: "List", estimateTime: 30 },
-    { taskName: "ListView", estimateTime: 40 },
-    { taskName: "Read Book", estimateTime: 10 },
-    { taskName: "Running", estimateTime: 10},
-  ];
-
+  const [tasks, setTasks] = useState(tasksFixture);
   return (
     <>
       <AddTask />
-      <TimeTracker estimateTime={estimatesTime} />
+      <TimeTracker tasks={tasks} />
     </>
   );
 };

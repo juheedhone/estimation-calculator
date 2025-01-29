@@ -1,3 +1,4 @@
+import type { ITasks } from "@/interface/tasks.interface";
 import { Button } from "./ui/button";
 import {
   Table,
@@ -8,17 +9,12 @@ import {
   TableRow,
 } from "./ui/table";
 
-interface Tasks {
-  taskName: string;
-  estimateTime: number;
-}
-
 interface Props {
-  estimateTime: Tasks[];
+  tasks: ITasks[];
 }
 
-const TimeTracker = ({ estimateTime }: Props) => {
-  if (estimateTime.length === 0) return null;
+const TimeTracker = ({ tasks }: Props) => {
+  if (tasks.length === 0) return null;
   return (
     <div className="rounded-lg border border-slate-700">
       <Table>
@@ -30,12 +26,12 @@ const TimeTracker = ({ estimateTime }: Props) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {estimateTime.map((estimate) => (
-            <TableRow key={estimate.taskName}>
-              <TableCell>{estimate.taskName}</TableCell>
-              <TableCell>{estimate.estimateTime}</TableCell>
+          {tasks.map((estimate) => (
+            <TableRow className="font-medium" key={estimate.name}>
+              <TableCell>{estimate.name}</TableCell>
+              <TableCell>{estimate.estimate}</TableCell>
               <TableCell>
-                <Button >Start</Button>
+                <Button>Start</Button>
               </TableCell>
             </TableRow>
           ))}
