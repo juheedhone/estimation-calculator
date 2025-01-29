@@ -19,25 +19,41 @@ const AddTask = () => {
         <DialogTrigger asChild>
           <Button>Add Task</Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="rounded-md">
           <DialogHeader>
             <DialogTitle>Add-Task</DialogTitle>
             <DialogDescription>
               Make changes to your profile here. Click save when you're done.
             </DialogDescription>
           </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
+          <div className="py-4  space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-left">
                 Name
               </Label>
               <Input id="name" value="List" className="col-span-3" />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="username" className="text-right">
-                Estimation
+            <div className="flex items-center justify-between">
+              <Label htmlFor="username" className="text-left">
+                Time Estimation
               </Label>
-              <Input id="username" value="30" className="col-span-3" />
+
+              <div className="flex items-center gap-2">
+                <Input
+                  id="username"
+                  type="number"
+                  value="30"
+                  className="w-16"
+                />
+                <p className="mr-4">hour</p>
+                <Input
+                  id="username"
+                  type="number"
+                  value="30"
+                  className="w-16"
+                />
+                <p>min</p>
+              </div>
             </div>
           </div>
 
