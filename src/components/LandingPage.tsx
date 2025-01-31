@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -13,10 +14,11 @@ export default function LandingPage() {
         <p className="text-lg text-gray-600 mt-4">
           Track & Plan Your Work Efficiently
         </p>
-        <Button className="mt-6 px-6 py-3 text-lg">Try It for Free</Button>
-        <div className="mt-10">
-        
-        </div>
+        <Link href="/tracker">
+          <Button className="mt-6 px-6 py-3 text-lg">Try It for Free</Button>
+        </Link>
+
+        <div className="mt-10"></div>
       </section>
       {/* Features Section */}
       <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-10 py-5">

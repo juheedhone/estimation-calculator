@@ -35,6 +35,7 @@ const AddTask = ({ onSubmit }: Props) => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   // const onSubmit = (data: FieldValues) => console.log(data);
+  console.log(errors);
   return (
     <div className="flex justify-end py-5 mr-2">
       <Dialog>
