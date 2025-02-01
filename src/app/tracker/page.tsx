@@ -1,7 +1,6 @@
 "use client";
 
 import FormAddTask from "@/components/FormAddTask";
-import LandingPage from "@/components/LandingPage";
 import TimeTracker from "@/components/TimeTracker";
 
 import { tasksFixture } from "@/fixture/tasks.fixture";
@@ -11,7 +10,6 @@ const Page = () => {
   const [tasks, setTasks] = useState(tasksFixture);
   return (
     <>
-   
       <FormAddTask
         onSubmit={(data) => {
           console.log(data);

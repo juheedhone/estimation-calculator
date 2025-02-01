@@ -16,9 +16,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const schema = z.object({
-  name: z.string().min(3).max(10),
+  name: z.string(),
   estimateTimeHour: z.number(),
-  estimateTimeMin: z.number().min(10),
+  estimateTimeMin: z.number(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -37,7 +37,7 @@ const AddTask = ({ onSubmit }: Props) => {
   // const onSubmit = (data: FieldValues) => console.log(data);
   console.log(errors);
   return (
-    <div className="flex justify-end py-5 mr-2">
+    <div className="flex justify-center py-5 mr-2">
       <Dialog>
         <DialogTrigger asChild>
           <Button>Add Task</Button>
