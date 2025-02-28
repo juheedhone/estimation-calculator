@@ -34,8 +34,8 @@ const TimeTracker = ({ tasks }: Props) => {
                   </div>
                 </CardContent>
                 <div className="flex justify-start lg:justify-end ">
-                  <Button className={"px-3 py-1 rounded-full text-white"}>
-                    Start
+                  <Button className={"px-3 py-1 rounded-full text-white"} >
+                    Start 
                   </Button>
                 </div>
               </Card>
